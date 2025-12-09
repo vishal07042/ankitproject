@@ -1,0 +1,62 @@
+.hero-contact-card {
+  background-color: rgba(30, 41, 59, 0.95); /* Dark background like image */
+  padding: 2rem;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 350px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.card-header h3 {
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.hero-contact-card .form-group {
+  margin-bottom: 1rem;
+}
+
+.hero-contact-card input {
+  width: 100%;
+  padding: 12px 15px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  color: var(--white);
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.hero-contact-card input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.hero-contact-card input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  background: rgba(255,255,255,0.05);
+}
+
+.hero-contact-card .submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--accent-color);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}
+
+.hero-contact-card .submit-btn:hover {
+  background-color: var(--accent-hover);
+}

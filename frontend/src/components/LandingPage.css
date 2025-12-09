@@ -1,0 +1,160 @@
+/* Hero Section */
+.hero-section {
+  position: relative;
+  background-image: url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); /* Office meeting background */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px; /* Navbar height */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4); /* Light overlay to make text pop */
+}
+
+.hero-container {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-form-wrapper {
+  flex: 0 0 350px;
+  max-width: 100%;
+  z-index: 10;
+}
+
+/* Info Section (Not Your Average Realtor) */
+.info-section {
+  padding: 5rem 0;
+  background-color: var(--white);
+}
+
+.info-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.info-text {
+  flex: 1;
+}
+
+.blue-subtitle {
+  color: var(--primary-light);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.info-visuals {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.circle-img-group {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.circle-img {
+  border-radius: 50%;
+  border: 5px solid var(--white);
+  object-fit: cover;
+  position: absolute;
+  box-shadow: var(--shadow);
+}
+
+.main-circle {
+  width: 250px;
+  height: 250px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.sub-circle-1 {
+  width: 150px;
+  height: 150px;
+  top: 0;
+  right: 20px;
+  z-index: 1;
+}
+
+.sub-circle-2 {
+  width: 150px;
+  height: 150px;
+  bottom: 0;
+  right: 50px;
+  z-index: 1;
+}
+
+/* Section Spacing */
+.section-container {
+  padding: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .info-container {
+    flex-direction: column;
+  }
+  
+  .circle-img-group {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .main-circle {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .sub-circle-1, .sub-circle-2 {
+    width: 100px;
+    height: 100px;
+  }
+}

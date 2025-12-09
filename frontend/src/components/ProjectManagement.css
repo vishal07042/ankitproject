@@ -1,0 +1,129 @@
+.project-management h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.management-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.form-section, .list-section {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.form-section h3, .list-section h3 {
+  margin-top: 0;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.project-form .form-group {
+  margin-bottom: 20px;
+}
+
+.project-form .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.project-form .form-group input,
+.project-form .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.project-form .form-group input:focus,
+.project-form .form-group textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.project-form .submit-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.project-form .submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.project-form .submit-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.projects-list {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.project-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  background-color: white;
+}
+
+.project-thumb {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 15px;
+}
+
+.project-details {
+  flex: 1;
+}
+
+.project-details h4 {
+  margin: 0 0 5px 0;
+  color: #333;
+}
+
+.project-details p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+  .management-content {
+    grid-template-columns: 1fr;
+  }
+}

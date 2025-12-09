@@ -1,0 +1,70 @@
+.subscriber-list h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.subscribers-table {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  padding: 15px;
+}
+
+.table-body {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  background-color: white;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-row:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+@media (max-width: 768px) {
+  .table-header, .table-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .table-header {
+    display: none;
+  }
+  
+  .table-row {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    padding: 15px;
+  }
+  
+  .table-row > div {
+    display: flex;
+  }
+  
+  .table-row > div::before {
+    content: attr(data-label) ": ";
+    font-weight: bold;
+    margin-right: 10px;
+    text-transform: uppercase;
+    color: #007bff;
+  }
+}
