@@ -1,7 +1,7 @@
 {
-  "name": "flipr-backend",
+  "name": "flipkill-backend",
   "version": "1.0.0",
-  "description": "Backend for Flipr Fullstack Assignment",
+  "description": "Backend for flipkill Fullstack Assignment",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
