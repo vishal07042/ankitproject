@@ -11,7 +11,7 @@ const OurProjects = () => {
 
   const fetchProjects = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/projects');
+      const response = await axios.get('https://ankitproject-five.vercel.app/api/projects');
       setProjects(response.data);
     } catch (error) {
       console.error('Error fetching projects:', error);
@@ -24,9 +24,9 @@ const OurProjects = () => {
       <div className="projects-grid">
         {projects.map(project => (
           <div key={project.id} className="project-card">
-            <img 
-              src={project.image} 
-              alt={project.name} 
+            <img
+              src={project.image}
+              alt={project.name}
               className="project-image"
             />
             <div className="project-info">

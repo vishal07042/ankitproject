@@ -18,7 +18,7 @@ const ClientManagement = () => {
 
   const fetchClients = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/clients');
+      const response = await axios.get('https://ankitproject-five.vercel.app/api/clients');
       setClients(response.data);
     } catch (error) {
       console.error('Error fetching clients:', error);
@@ -35,17 +35,17 @@ const ClientManagement = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
-    
+
     try {
-      await axios.post('http://localhost:5000/api/clients', formData, {
+      await axios.post('https://ankitproject-five.vercel.app/api/clients', formData, {
         headers: {
           'Content-Type': 'application/json'
         }
       });
-      
+
       // Reset form
       setFormData({ name: '', description: '', designation: '', image: '' });
-      
+
       // Refresh clients list
       fetchClients();
     } catch (error) {
@@ -59,7 +59,7 @@ const ClientManagement = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this client?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/clients/${id}`);
+        await axios.delete(`https://ankitproject-five.vercel.app/api/clients/${id}`);
         fetchClients();
       } catch (error) {
         console.error('Error deleting client:', error);
@@ -71,7 +71,7 @@ const ClientManagement = () => {
   return (
     <div className="client-management">
       <h2>Client Management</h2>
-      
+
       <div className="management-content">
         <div className="form-section">
           <h3>Add New Client</h3>
@@ -88,7 +88,7 @@ const ClientManagement = () => {
                 placeholder="Enter client name"
               />
             </div>
-            
+
             <div className="form-group">
               <label htmlFor="designation">Designation</label>
               <input
@@ -113,7 +113,7 @@ const ClientManagement = () => {
                 placeholder="https://example.com/client.jpg"
               />
             </div>
-            
+
             <div className="form-group">
               <label htmlFor="description">Description</label>
               <textarea
@@ -126,17 +126,17 @@ const ClientManagement = () => {
                 placeholder="Enter client review/description"
               ></textarea>
             </div>
-            
-            <button 
-              type="submit" 
-              className="submit-btn" 
+
+            <button
+              type="submit"
+              className="submit-btn"
               disabled={submitting}
             >
               {submitting ? 'Adding...' : 'Add Client'}
             </button>
           </form>
         </div>
-        
+
         <div className="list-section">
           <h3>Existing Clients</h3>
           {clients.length === 0 ? (
@@ -145,9 +145,9 @@ const ClientManagement = () => {
             <div className="clients-list">
               {clients.map(client => (
                 <div key={client.id} className="client-item">
-                  <img 
-                    src={client.image} 
-                    alt={client.name} 
+                  <img
+                    src={client.image}
+                    alt={client.name}
                     className="client-thumb"
                   />
                   <div className="client-details">
@@ -155,7 +155,7 @@ const ClientManagement = () => {
                     <p className="designation">{client.designation}</p>
                     <p className="description">{client.description}</p>
                   </div>
-                  <button 
+                  <button
                     className="delete-btn"
                     onClick={() => handleDelete(client.id)}
                   >

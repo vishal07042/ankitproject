@@ -9,9 +9,9 @@ const NewsletterSubscription = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email) return;
-    
+
     try {
-      await axios.post('http://localhost:5000/api/subscribe', { email });
+      await axios.post('https://ankitproject-five.vercel.app/api/subscribe', { email });
       setSubscribed(true);
       setEmail('');
       setTimeout(() => setSubscribed(false), 3000);
@@ -30,7 +30,7 @@ const NewsletterSubscription = () => {
           <a href="#clients">Testimonials</a>
           <a href="#contact">Contact</a>
         </div>
-        
+
         <div className="newsletter-form-container">
           <span className="subscribe-label">Subscribe Us</span>
           <form onSubmit={handleSubmit} className="newsletter-form">

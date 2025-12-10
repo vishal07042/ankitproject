@@ -11,7 +11,7 @@ const SubscriberList = () => {
 
   const fetchSubscribers = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/subscribers');
+      const response = await axios.get('https://ankitproject-five.vercel.app/api/subscribers');
       setSubscribers(response.data);
     } catch (error) {
       console.error('Error fetching subscribers:', error);
@@ -26,7 +26,7 @@ const SubscriberList = () => {
   return (
     <div className="subscriber-list">
       <h2>Subscribed Email Addresses</h2>
-      
+
       {subscribers.length === 0 ? (
         <p>No subscribers found.</p>
       ) : (
@@ -35,7 +35,7 @@ const SubscriberList = () => {
             <div>Email Address</div>
             <div>Subscribed At</div>
           </div>
-          
+
           <div className="table-body">
             {subscribers.map(subscriber => (
               <div key={subscriber.id} className="table-row">

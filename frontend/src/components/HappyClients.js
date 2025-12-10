@@ -11,7 +11,7 @@ const HappyClients = () => {
 
   const fetchClients = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/clients');
+      const response = await axios.get('https://ankitproject-five.vercel.app/api/clients');
       setClients(response.data);
     } catch (error) {
       console.error('Error fetching clients:', error);
@@ -24,9 +24,9 @@ const HappyClients = () => {
       <div className="clients-grid">
         {clients.map(client => (
           <div key={client.id} className="client-card">
-            <img 
-              src={client.image} 
-              alt={client.name} 
+            <img
+              src={client.image}
+              alt={client.name}
               className="client-image"
             />
             <div className="client-info">

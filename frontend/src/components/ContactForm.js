@@ -21,7 +21,7 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/contacts', formData);
+      await axios.post('https://ankitproject-five.vercel.app/api/contacts', formData);
       setSubmitted(true);
       setFormData({
         fullName: '',

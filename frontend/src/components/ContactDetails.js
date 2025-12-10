@@ -11,7 +11,7 @@ const ContactDetails = () => {
 
   const fetchContacts = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/contacts');
+      const response = await axios.get('https://ankitproject-five.vercel.app/api/contacts');
       setContacts(response.data);
     } catch (error) {
       console.error('Error fetching contacts:', error);
@@ -26,7 +26,7 @@ const ContactDetails = () => {
   return (
     <div className="contact-details">
       <h2>Contact Form Details</h2>
-      
+
       {contacts.length === 0 ? (
         <p>No contact submissions found.</p>
       ) : (
@@ -38,7 +38,7 @@ const ContactDetails = () => {
             <div>City</div>
             <div>Submitted At</div>
           </div>
-          
+
           <div className="table-body">
             {contacts.map(contact => (
               <div key={contact.id} className="table-row">

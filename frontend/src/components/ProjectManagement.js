@@ -17,7 +17,7 @@ const ProjectManagement = () => {
 
   const fetchProjects = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/projects');
+      const response = await axios.get('https://ankitproject-five.vercel.app/api/projects');
       setProjects(response.data);
     } catch (error) {
       console.error('Error fetching projects:', error);
@@ -34,17 +34,17 @@ const ProjectManagement = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
-    
+
     try {
-      await axios.post('http://localhost:5000/api/projects', formData, {
+      await axios.post('https://ankitproject-five.vercel.app/api/projects', formData, {
         headers: {
           'Content-Type': 'application/json'
         }
       });
-      
+
       // Reset form
       setFormData({ name: '', description: '', image: '' });
-      
+
       // Refresh projects list
       fetchProjects();
     } catch (error) {
@@ -58,7 +58,7 @@ const ProjectManagement = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this project?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/projects/${id}`);
+        await axios.delete(`https://ankitproject-five.vercel.app/api/projects/${id}`);
         fetchProjects();
       } catch (error) {
         console.error('Error deleting project:', error);
@@ -70,7 +70,7 @@ const ProjectManagement = () => {
   return (
     <div className="project-management">
       <h2>Project Management</h2>
-      
+
       <div className="management-content">
         <div className="form-section">
           <h3>Add New Project</h3>
@@ -87,7 +87,7 @@ const ProjectManagement = () => {
                 placeholder="Enter project name"
               />
             </div>
-            
+
             <div className="form-group">
               <label htmlFor="image">Project Image URL</label>
               <input
@@ -99,7 +99,7 @@ const ProjectManagement = () => {
                 placeholder="https://example.com/image.jpg"
               />
             </div>
-            
+
             <div className="form-group">
               <label htmlFor="description">Description</label>
               <textarea
@@ -112,17 +112,17 @@ const ProjectManagement = () => {
                 placeholder="Enter project description"
               ></textarea>
             </div>
-            
-            <button 
-              type="submit" 
-              className="submit-btn" 
+
+            <button
+              type="submit"
+              className="submit-btn"
               disabled={submitting}
             >
               {submitting ? 'Adding...' : 'Add Project'}
             </button>
           </form>
         </div>
-        
+
         <div className="list-section">
           <h3>Existing Projects</h3>
           {projects.length === 0 ? (
@@ -131,16 +131,16 @@ const ProjectManagement = () => {
             <div className="projects-list">
               {projects.map(project => (
                 <div key={project.id} className="project-item">
-                  <img 
-                    src={project.image} 
-                    alt={project.name} 
+                  <img
+                    src={project.image}
+                    alt={project.name}
                     className="project-thumb"
                   />
                   <div className="project-details">
                     <h4>{project.name}</h4>
                     <p>{project.description}</p>
                   </div>
-                  <button 
+                  <button
                     className="delete-btn"
                     onClick={() => handleDelete(project.id)}
                   >
